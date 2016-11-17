@@ -4,7 +4,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class Greeting {
+public class ContentForm {
 
     @NotNull
     @Min(18)

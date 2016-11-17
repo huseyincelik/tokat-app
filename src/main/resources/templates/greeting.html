@@ -3,8 +3,35 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'" />
+
+<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+
+    <table>
+        <tr>
+            <td>id:</td>
+            <td><input type="text" th:field="*{id}" /></td>
+            <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Name Error</td>
+        </tr>
+        <tr>
+            <td>message:</td>
+            <td><input type="text" th:field="*{content}" /></td>
+            <td th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Age Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+
+</form>
+
 </body>
 </html>

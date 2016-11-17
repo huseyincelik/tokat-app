@@ -3,8 +3,22 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'" />
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Hello</h1>
+
+        <h2>Fellow Spring Framework Gurus!!!</h2>
+    </div>
+</div>
 </body>
 </html>

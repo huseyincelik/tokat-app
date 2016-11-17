@@ -7,6 +7,8 @@
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
           rel="stylesheet" media="screen" />
+    <link href="/assets/css/style.css"
+          rel="stylesheet" media="screen" />
 
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
@@ -25,8 +27,8 @@
 
         <table>
             <tr class="form-group">
-                <td><label>Message:</label></td>
-                <td><input type="text" th:field="*{id}" class="form-control" /></td>
+                <td class="form-field-name"><label>Message:</label></td>
+                <td class="form-field-input"><input type="text" th:field="*{id}" class="form-control" /></td>
                 <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Name Error</td>
             </tr>
             <tr class="form-group">

@@ -7,9 +7,12 @@
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
           rel="stylesheet" media="screen" />
+    <link href="/assets/css/style.css"
+          rel="stylesheet" media="screen" />
 
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <script src="/assets/js/main.js"></script>
 </head>
 <body>
 
@@ -32,6 +35,13 @@
             <tr class="form-group">
                 <td><label>Message:</label></td>
                 <td><input type="text" th:field="*{content}" /></td>
+                <td class="form-field-name"><label>Id:</label></td>
+                <td class="form-field-input"><input type="text" th:field="*{id}" class="form-control" /></td>
+                <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Name Error</td>
+            </tr>
+            <tr class="form-group">
+                <td><label>Content:</label></td>
+                <td><input type="text" th:field="*{content}" class="form-control" /></td>
                 <td th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Age Error</td>
             </tr>
             <tr>

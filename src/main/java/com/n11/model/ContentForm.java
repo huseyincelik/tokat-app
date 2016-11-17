@@ -11,7 +11,7 @@ public class ContentForm {
     private long id;
 
     @NotNull
-    @Size(min = 2, max = 30)
+    @Size(min = 2, max = 300)
     private String content;
 
     public long getId() {

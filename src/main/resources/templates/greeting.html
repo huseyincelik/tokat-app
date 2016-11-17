@@ -14,9 +14,23 @@
 <body>
 
 <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
-    <p>Id: <input type="text" th:field="*{id}" /></p>
-    <p>Message: <input type="text" th:field="*{content}" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
+    <table>
+        <tr>
+            <td>Message:</td>
+            <td><input type="text" th:field="*{id}" /></td>
+            <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Id:</td>
+            <td><input type="text" th:field="*{content}" /></td>
+            <td th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Age Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+
 </form>
 
 <div class="container">

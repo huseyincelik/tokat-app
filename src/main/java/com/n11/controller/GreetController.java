@@ -26,7 +26,7 @@ public class GreetController {
             return "greeting";
         }
 
-        return "redirect:/result";
+        return "result";
     }
 
 }
